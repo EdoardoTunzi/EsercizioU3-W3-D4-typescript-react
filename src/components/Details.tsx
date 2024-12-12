@@ -27,7 +27,7 @@ const Details = () => {
     <Container>
       {details ? (
         <Card>
-          <Card.Img variant="top" src={details.image_url} alt={details.title} style={{ maxWidth: "900px", margin: "10px auto" }} />
+          <Card.Img variant="top" src={details.image_url} alt={details.title} style={{ maxWidth: "100%" }} />
           <Card.Body>
             <Card.Title>{details.title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{details.news_site}</Card.Subtitle>
