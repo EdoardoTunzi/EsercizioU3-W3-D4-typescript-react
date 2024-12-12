@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { IArticles, Result } from "../assets/interfaces/IArticles";
+
+import { useNavigate } from "react-router-dom";
 
 const MainArticle = () => {
   const [articles, setArticles] = useState<Result[]>([]);
+  const navigate = useNavigate();
 
   const fetchArticles = async () => {
     try {
@@ -25,7 +28,15 @@ const MainArticle = () => {
       <Row className="justify-content-center">
         {articles.map((article) => (
           <Col xs={12} key={article.id}>
-            <h3>{article.title}</h3>
+            <Card className="mb-3">
+              <Card.Body>
+                <Card.Title>{article.title}</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">{article.id}</Card.Subtitle>
+                <Card.Link href="#" onClick={() => navigate(`/details/${article.id}`)}>
+                  Read more
+                </Card.Link>
+              </Card.Body>
+            </Card>
           </Col>
         ))}
       </Row>
