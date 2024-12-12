@@ -16,7 +16,7 @@ export interface Result {
   updated_at: Date;
   featured: boolean;
   launches: Launch[];
-  events: [];
+  events: unknown[];
 }
 
 export interface Launch {
