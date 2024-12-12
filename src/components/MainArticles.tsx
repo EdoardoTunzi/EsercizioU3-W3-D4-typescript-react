@@ -30,7 +30,7 @@ const MainArticle = () => {
           <Col xs={12} key={article.id}>
             <Card className="mb-3">
               <Card.Body>
-                <Card.Title>{article.title}</Card.Title>
+                <Card.Title className="fs-3">{article.title}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{article.id}</Card.Subtitle>
                 <Card.Link href="#" onClick={() => navigate(`/details/${article.id}`)}>
                   Read more
