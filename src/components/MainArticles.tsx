@@ -25,7 +25,7 @@ const MainArticle = () => {
 
   return (
     <Container>
-      <Row className="justify-content-center">
+      <Row className="justify-content-center my-5">
         {articles.map((article) => (
           <Col xs={12} key={article.id}>
             <Card className="mb-3">
