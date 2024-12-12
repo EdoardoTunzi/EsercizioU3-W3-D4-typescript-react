@@ -20,13 +20,14 @@ const Details = () => {
   };
   useEffect(() => {
     fetchArtDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.artId]);
 
   return (
     <Container>
       {details ? (
         <Card>
-          <Card.Img variant="top" src={details.image_url} alt={details.title} />
+          <Card.Img variant="top" src={details.image_url} alt={details.title} style={{ maxWidth: "900px", margin: "10px auto" }} />
           <Card.Body>
             <Card.Title>{details.title}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">{details.news_site}</Card.Subtitle>
